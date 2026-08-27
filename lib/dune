@@ -1,2 +1,6 @@
 (library
- (name xdromad))
+ (name xdromad)
+ (foreign_stubs
+  (language c)
+  (names x11_stubs))
+ (c_library_flags (-lX11)))
