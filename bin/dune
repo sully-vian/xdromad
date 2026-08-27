@@ -1,0 +1,4 @@
+(executable
+ (public_name xdromad)
+ (name main)
+ (libraries xdromad))
