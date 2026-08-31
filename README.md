@@ -2,26 +2,6 @@
 
 A tiling window manager for X11 in OCaml
 
-To build:
+## TODO
 
-```sh
-dune build
-```
-
-To run the project:
-
-```sh
-dune exec xdromad
-```
-
-To run tests:
-
-```sh
-dune test
-```
-
-To format the code:
-
-```sh
-dune fmt
-```
+- Decide of a proper way to interact with the C code. Prioritize the use of Function Programming patterns (`'a option`, `result` etc).

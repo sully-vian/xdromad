@@ -1,4 +1,5 @@
 (executable
  (public_name xdromad)
  (name main)
- (libraries xdromad))
+ (libraries xdromad)
+ (link_flags :standard -cclib -Wl,--warn-unresolved-symbols))
