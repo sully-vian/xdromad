@@ -28,14 +28,14 @@ external internal_get_window_attributes :
   display -> window -> int * int * int * int = "caml_XGetWindowAttributes"
 
 external select_input : display -> window -> int -> int = "caml_XSelectInput"
-external raise_window : display -> window -> unit = "caml_XRaiseWindow"
+external raise_window : display -> window -> int = "caml_XRaiseWindow"
 
 let get_window_attributes display win =
   let x, y, width, height = internal_get_window_attributes display win in
   { x; y; width; height }
 
 external move_resize_window :
-  display -> window -> int -> int -> int -> int -> unit
+  display -> window -> int -> int -> int -> int -> int
   = "dummy" "caml_XMoveResizeWindow"
 
 external grab_key : display -> int -> int -> window -> bool -> int -> int -> int
@@ -50,9 +50,9 @@ external grab_button :
   int ->
   int ->
   int ->
-  window ->
-  cursor ->
-  int = "dummy" "caml_XGrabButton"
+  window option ->
+  cursor option ->
+  (int, int) result = "dummy" "caml_XGrabButton"
 
 external string_to_keysym : string -> int = "caml_XStringToKeysym"
 external keysym_to_keycode : display -> int -> int = "caml_XKeysymToKeycode"
@@ -109,6 +109,3 @@ let next_event display =
           y_root = raw_y_root raw;
         }
   | n -> Unknown n
-
-external none_window : unit -> window = "caml_X11_None"
-external none_cursor : unit -> cursor = "caml_X11_None"
