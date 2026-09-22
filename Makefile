@@ -12,3 +12,6 @@ format: ## Format code
 
 xinit: ## Run xdromad in xinit (to use in another tty during development)
 	xinit /bin/sh -c "xeyes & mpv av://lavfi:mandelbrot & st & picom & exec $(CURDIR)/_build/default/bin/main.exe" -- :1 vt2 > $(CURDIR)/xdromad.log 2>&1
+
+kill:
+	pkill main.exe
