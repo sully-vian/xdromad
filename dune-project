@@ -15,11 +15,15 @@
 
 (documentation https://url/to/documentation)
 
+(pin
+  (url "git+https://github.com/sully-vian/x11.git")
+  (package (name x11)))
+
 (package
  (name xdromad)
  (synopsis "A short synopsis")
  (description "A longer description")
- (depends ocaml)
+ (depends ocaml x11)
  (tags
   ("add topics" "to describe" your project)))
 

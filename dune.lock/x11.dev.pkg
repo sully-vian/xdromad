@@ -1,0 +1,15 @@
+(version dev)
+
+(build
+ (all_platforms ((dune))))
+
+(depends
+ (all_platforms
+  (ocaml ctypes)))
+
+(source
+ (fetch
+  (url
+   git+https://github.com/sully-vian/x11.git#097919dfe8229698a63c4b66c341029693bc0ce9)))
+
+(dev)
